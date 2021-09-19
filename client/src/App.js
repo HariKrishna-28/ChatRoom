@@ -23,14 +23,13 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center h-screen  ">
       {!showChat ? (
-
         <div className="grid grid-cols-1 gap-2">
           {/* <h1>Hi frans</h1>  */}
           <h3 className="font-semibold text-3xl text-center">Join a Chat</h3>
-          <form>
+          <form className="mx-10 lg:mx-0">
             <input
               type="text"
-              placeholder="name"
+              placeholder="Name"
               className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               required
               autoFocus
@@ -40,7 +39,7 @@ function App() {
             <input
               type="text"
               className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="room"
+              placeholder="Room ID"
               required
               onChange={(e) => setRoom(e.target.value)}
             />
@@ -49,7 +48,7 @@ function App() {
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded "
                 onClick={JoinRoom}>
-                Join room
+                Join/Create room
               </button>
             </div>
           </form>

@@ -39,8 +39,11 @@ const Chat = ({ socket, name, room }) => {
                 <div className="grid grid-cols-1 container bg-gray-800 text-white rounded p-2 gap-2 ">
 
                     <div >
-                        <h1 className="font-semibold text-3xl ">Chat point</h1>
-                        <p className="text-sm">Room ID: <span className="text-gray-300">{room}</span></p>
+                        <h1 className="font-semibold text-3xl ">Chat Point</h1>
+                        {/* <div className="flex gap-2"> */}
+                        {/* <p className="text-sm font-semibold"> User Name : <span className="text-gray-300">{name}</span></p> */}
+                        <p className="text-sm font-semibold">Room ID: <span className="text-gray-300">{room}</span></p>
+                        {/* </div> */}
                     </div>
                 </div>
                 <div className="flex-grow-1" style={{ width: "380px" }}>
@@ -48,19 +51,19 @@ const Chat = ({ socket, name, room }) => {
                         {/* <ScrollToBottom style={{ width: "100%", height: "100%", overflowY: "auto" }}> */}
                         {messageList.map((messageBody) => {
 
-                            const textAlign = name !== messageBody.author ? "flex text-left" : "flex text-right"
+                            const textAlign = name !== messageBody.author ? "text-left" : "text-right"
                             const bg = name !== messageBody.author ? " bg-blue-500 text-white rounded text-sm p-1 px-2" :
                                 " bg-green-500 text-sm text-white text-left rounded p-1 px-2"
 
                             return (
-                                <div>
+                                <div className={textAlign}>
                                     {/* <h1>{messageBody.message}</h1> */}
                                     {/* <div> */}
 
-                                    <div className={textAlign}>
+                                    <div >
                                         <span className={bg}>{messageBody.message}</span>
                                     </div>
-                                    <div className="flex flex-row gap-3 py-1 text-gray-700" style={{ fontSize: "12px" }}>
+                                    <div className="gap-3 py-1 text-gray-700" style={{ fontSize: "12px" }}>
                                         <p className="font-semibold">{name === messageBody.author ? "You" : messageBody.author}</p>
                                         <p>{new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes() === messageBody.time ? "Now" : messageBody.time}</p>
                                     </div>
