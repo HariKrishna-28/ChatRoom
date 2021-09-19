@@ -2,6 +2,7 @@ const express = require("express")
 const http = require("http")
 const cors = require("cors")
 const { Server } = require("socket.io")
+// const path = require("path")
 
 const app = express();
 app.use(cors())
@@ -39,7 +40,9 @@ io.on("connection", (socket) => {
 // app.get("/", (req, res) => {
 //     res.send("vanakam frans")
 // })
-
-server.listen(process.env.port || 5000, () => {
+app.get("/", (req, res) => {
+    res.send("Server running")
+})
+server.listen(process.env.PORT || 5000, () => {
     console.log("Server running");
 })
