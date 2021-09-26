@@ -24,8 +24,9 @@ function App() {
     <div className="flex flex-col items-center justify-center h-screen  ">
       {!showChat ? (
         <div className="grid grid-cols-1 gap-2">
-          {/* <h1>Hi frans</h1>  */}
-          <h3 className="font-semibold text-3xl text-center">Join a Chat</h3>
+          {/* <h1>Hi frans</h1> */}
+          {/* <h3 className="font-bold text-3xl text-center">Welcome!</h3> */}
+          <h3 className="font-bold text-3xl text-center">Join a Chat</h3>
           <form className="mx-10 lg:mx-0">
             <input
               type="text"
@@ -43,6 +44,7 @@ function App() {
               required
               onChange={(e) => setRoom(e.target.value)}
             />
+
             <div className="flex align-center justify-center">
               <button
                 type="submit"
@@ -51,10 +53,12 @@ function App() {
                 Join/Create room
               </button>
             </div>
+
           </form>
         </div>
       ) : (
         <div className="flex">
+
           <Chat
             socket={socket}
             name={name}

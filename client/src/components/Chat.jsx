@@ -1,10 +1,12 @@
-// import { text } from 'express'
 import React, { useEffect, useState } from 'react'
-// import ScrollToBottom from "react-scroll-to-bottom"
+import IncomingMessageAudio from "../assets/juntos-607.mp3"
+// import OutGoingMessageAudio from "../assets/when-604.mp3"
 
 const Chat = ({ socket, name, room }) => {
     const [currMsg, setCurMsg] = useState("")
     const [messageList, setMessageList] = useState([])
+    const incoming = new Audio(IncomingMessageAudio);
+    // const outgoing = new Audio(OutGoingMessageAudio)
 
     const SendMessage = async () => {
         if (currMsg !== "") {
@@ -16,6 +18,7 @@ const Chat = ({ socket, name, room }) => {
             }
 
             await socket.emit("send_message", messageData)
+            // outgoing.play()
             setMessageList((list) => [...list, messageData])
             setCurMsg("")
 
@@ -26,8 +29,10 @@ const Chat = ({ socket, name, room }) => {
         socket.on("receive_message", (data) => {
             console.log(data)
             setMessageList((list) => [...list, data])
+            incoming.play()
 
         })
+        // eslint-disable-next-line
     }, [socket])
 
     return (
@@ -36,7 +41,7 @@ const Chat = ({ socket, name, room }) => {
             {/* <div>hi</div> */}
             <div className="container">
 
-                <div className="grid grid-cols-1 container bg-gray-800 text-white rounded p-2 gap-2 ">
+                <div className="grid grid-cols-1 bg-gray-800 text-white rounded p-2 gap-2 ">
 
                     <div >
                         <h1 className="font-semibold text-3xl ">Chat Point</h1>
@@ -83,6 +88,7 @@ const Chat = ({ socket, name, room }) => {
 
                         <input
                             type="text"
+                            // style={{ marginTop: "4px" }}
                             className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             onChange={(e) => { setCurMsg(e.target.value) }}
                             value={currMsg}
