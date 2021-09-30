@@ -82,7 +82,7 @@ const Chat = ({ socket, name, room }) => {
                                         <span className={bg}>{messageBody.message}</span>
                                     </div>
                                     <div className="gap-3 py-1 text-gray-700" style={{ fontSize: "12px" }}>
-                                        <p className="font-semibold">{name === messageBody.author ? "You" : messageBody.author} &ensp; {new Date(Date.now()).getHours() === messageBody ? "Now" : messageBody.time}</p>
+                                        <p className="font-semibold">{name === messageBody.author ? "You" : messageBody.author} &ensp; {new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes() === messageBody.time ? "Now" : messageBody.time}</p>
                                         {/* <p>{new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes() === messageBody.time ? "Now" : messageBody.time}</p> */}
                                     </div>
 
