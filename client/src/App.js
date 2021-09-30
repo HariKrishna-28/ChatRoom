@@ -3,8 +3,8 @@ import { useState } from "react";
 import io from "socket.io-client"
 import Chat from "./components/Chat";
 
-// const baseUrl = "https://chat-room-28.herokuapp.com"
-const baseUrl = "http://localhost:5000"
+const baseUrl = "https://chat-room-28.herokuapp.com"
+// const baseUrl = "http://localhost:5000"
 
 const socket = io.connect(baseUrl)
 
