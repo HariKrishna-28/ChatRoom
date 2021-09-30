@@ -9,8 +9,8 @@ app.use(cors())
 
 const server = http.createServer(app)
 
-// const baseUrl = "http://localhost:3000"
-const baseUrl = "https://chat-room-28.netlify.app"
+const baseUrl = "http://localhost:3000"
+// const baseUrl = "https://chat-room-28.netlify.app"
 
 const io = new Server(server, {
     cors: {
@@ -43,6 +43,7 @@ io.on("connection", (socket) => {
 app.get("/", (req, res) => {
     res.send("Server running")
 })
+
 server.listen(process.env.PORT || 5000, () => {
     console.log("Server running");
 })

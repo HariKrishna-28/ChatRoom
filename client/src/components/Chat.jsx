@@ -8,6 +8,11 @@ const Chat = ({ socket, name, room }) => {
     const incoming = new Audio(IncomingMessageAudio);
     // const outgoing = new Audio(OutGoingMessageAudio)
 
+    function MessageScroll() {
+        const div = document.getElementById("message-box")
+        div.scrollTop = div.scrollHeight - div.clientHeight;
+    }
+
     const SendMessage = async () => {
         if (currMsg !== "") {
             const messageData = {
@@ -21,15 +26,17 @@ const Chat = ({ socket, name, room }) => {
             // outgoing.play()
             setMessageList((list) => [...list, messageData])
             setCurMsg("")
+            MessageScroll()
 
         }
     }
 
     useEffect(() => {
         socket.on("receive_message", (data) => {
-            console.log(data)
+            // console.log(data)
             setMessageList((list) => [...list, data])
             incoming.play()
+            MessageScroll()
 
         })
         // eslint-disable-next-line
@@ -49,16 +56,22 @@ const Chat = ({ socket, name, room }) => {
                         {/* <p className="text-sm font-semibold"> User Name : <span className="text-gray-300">{name}</span></p> */}
                         <p className="text-sm font-semibold">Room ID: <span className="text-gray-300">{room}</span></p>
                         {/* </div> */}
+
                     </div>
                 </div>
-                <div className="flex-grow-1" style={{ width: "380px" }}>
-                    <div className="flex-grow-1 overflow-y-scroll overflow-x-hidden border-2 border-grey-500 rounded p-2" style={{ height: "300px" }}>
-                        {/* <ScrollToBottom style={{ width: "100%", height: "100%", overflowY: "auto" }}> */}
-                        {messageList.map((messageBody) => {
+                <div className="flex-grow-1" style={{ width: "400px" }}>
+                    <div className="flex-grow-1 overflow-y-scroll overflow-x-hidden border-2 border-grey-500 rounded p-2"
+                        style={{ height: "350px" }}
+                        id="message-box"
+                    >
 
+                        {messageList.map((messageBody) => {
                             const textAlign = name !== messageBody.author ? "text-left" : "text-right"
                             const bg = name !== messageBody.author ? " bg-blue-500 text-white rounded text-sm p-1 px-2" :
                                 " bg-green-500 text-sm text-white text-left rounded p-1 px-2"
+
+
+
 
                             return (
                                 <div className={textAlign}>
@@ -69,14 +82,16 @@ const Chat = ({ socket, name, room }) => {
                                         <span className={bg}>{messageBody.message}</span>
                                     </div>
                                     <div className="gap-3 py-1 text-gray-700" style={{ fontSize: "12px" }}>
-                                        <p className="font-semibold">{name === messageBody.author ? "You" : messageBody.author} &ensp; {new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes() === messageBody.time ? "Now" : messageBody.time}</p>
+                                        <p className="font-semibold">{name === messageBody.author ? "You" : messageBody.author} &ensp; {new Date(Date.now()).getHours() === messageBody ? "Now" : messageBody.time}</p>
                                         {/* <p>{new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes() === messageBody.time ? "Now" : messageBody.time}</p> */}
                                     </div>
 
                                     {/* </div> */}
+
                                 </div>
                             )
                         })}
+
                         {/* </ScrollToBottom> */}
 
                     </div>
