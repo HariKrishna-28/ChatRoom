@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import IncomingMessageAudio from "../assets/juntos-607.mp3"
-// import OutGoingMessageAudio from "../assets/when-604.mp3"
+import '../styles/ChatStyle.css'
+import OutGoingMessageAudio from "../assets/when-604.mp3"
 
 const Chat = ({ socket, name, room }) => {
     const [currMsg, setCurMsg] = useState("")
     const [messageList, setMessageList] = useState([])
     const incoming = new Audio(IncomingMessageAudio);
-    // const outgoing = new Audio(OutGoingMessageAudio)
+    const outgoing = new Audio(OutGoingMessageAudio)
 
     function MessageScroll() {
         const div = document.getElementById("message-box")
@@ -23,10 +24,10 @@ const Chat = ({ socket, name, room }) => {
             }
 
             await socket.emit("send_message", messageData)
-            // outgoing.play()
+            outgoing.play()
             setMessageList((list) => [...list, messageData])
             setCurMsg("")
-            MessageScroll()
+            // MessageScroll()
 
         }
     }
@@ -36,11 +37,15 @@ const Chat = ({ socket, name, room }) => {
             // console.log(data)
             setMessageList((list) => [...list, data])
             incoming.play()
-            MessageScroll()
+            // MessageScroll()
 
         })
         // eslint-disable-next-line
     }, [socket])
+
+    useEffect(() => {
+        MessageScroll()
+    }, [messageList])
 
     return (
 
@@ -59,9 +64,8 @@ const Chat = ({ socket, name, room }) => {
 
                     </div>
                 </div>
-                <div className="flex-grow-1" style={{ width: "400px" }}>
+                <div className="flex-grow-1" id="outer-box">
                     <div className="flex-grow-1 overflow-y-scroll overflow-x-hidden border-2 border-grey-500 rounded p-2"
-                        style={{ height: "350px" }}
                         id="message-box"
                     >
 
@@ -69,9 +73,6 @@ const Chat = ({ socket, name, room }) => {
                             const textAlign = name !== messageBody.author ? "text-left" : "text-right"
                             const bg = name !== messageBody.author ? " bg-blue-500 text-white rounded text-sm p-1 px-2" :
                                 " bg-green-500 text-sm text-white text-left rounded p-1 px-2"
-
-
-
 
                             return (
                                 <div className={textAlign}>
