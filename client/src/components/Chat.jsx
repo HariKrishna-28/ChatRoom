@@ -9,7 +9,7 @@ const Chat = ({ socket, name, room }) => {
     const incoming = new Audio(IncomingMessageAudio);
     const outgoing = new Audio(OutGoingMessageAudio)
 
-    function MessageScroll() {
+    function MessageScroll() { //scrolls to the bottom of the div tag
         const div = document.getElementById("message-box")
         div.scrollTop = div.scrollHeight - div.clientHeight;
     }
@@ -53,14 +53,24 @@ const Chat = ({ socket, name, room }) => {
             {/* <div>hi</div> */}
             <div className="container">
 
+
                 <div className="grid grid-cols-1 bg-gray-800 text-white rounded p-2 gap-2 ">
 
                     <div >
-                        <h1 className="font-semibold text-3xl ">Chat Point</h1>
-                        {/* <div className="flex gap-2"> */}
-                        {/* <p className="text-sm font-semibold"> User Name : <span className="text-gray-300">{name}</span></p> */}
+                        <div className="flex">
+                            <h1 className="font-semibold text-3xl ">
+                                <a href="https://github.com/HariKrishna-28/ChatRoom"
+                                    target=" _blank"
+                                    rel="noreferrer"
+                                    className="hover:text-blue-500" >
+                                    Chat Point
+                                </a>
+                            </h1>
+
+                        </div>
+
                         <p className="text-sm font-semibold">Room ID: <span className="text-gray-300">{room}</span></p>
-                        {/* </div> */}
+
 
                     </div>
                 </div>

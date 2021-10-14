@@ -57,7 +57,8 @@ function App() {
           </form>
         </div>
       ) : (
-        <div className="flex">
+
+        <div>
 
           <Chat
             socket={socket}
