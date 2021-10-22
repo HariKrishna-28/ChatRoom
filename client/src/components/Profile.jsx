@@ -1,9 +1,10 @@
 import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import ChatBody from './ChatBody';
-import LogoutButton from "./LogoutButton"
+// import LogoutButton from "./LogoutButton"
 
 const Profile = () => {
+    // eslint-disable-next-line
     const { user, isAuthenticated } = useAuth0();
 
     return (
