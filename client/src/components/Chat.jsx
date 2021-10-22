@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import IncomingMessageAudio from "../assets/juntos-607.mp3"
 import '../styles/ChatStyle.css'
 import OutGoingMessageAudio from "../assets/when-604.mp3"
+import LogoutButton from './LogoutButton'
 
 const Chat = ({ socket, name, room }) => {
     const [currMsg, setCurMsg] = useState("")
@@ -79,13 +80,13 @@ const Chat = ({ socket, name, room }) => {
                         id="message-box"
                     >
 
-                        {messageList.map((messageBody) => {
+                        {messageList.map((messageBody, key) => {
                             const textAlign = name !== messageBody.author ? "text-left" : "text-right"
                             const bg = name !== messageBody.author ? " bg-blue-500 text-white rounded text-sm p-1 px-2" :
                                 " bg-green-500 text-sm text-white text-left rounded p-1 px-2"
 
                             return (
-                                <div className={textAlign}>
+                                <div className={textAlign} key={key}>
                                     {/* <h1>{messageBody.message}</h1> */}
                                     {/* <div> */}
 
@@ -121,10 +122,12 @@ const Chat = ({ socket, name, room }) => {
                             required
                             autoFocus />
 
-                        <div className=" flex justify-center items-center">
+                        <div className=" flex flex-col gap-2 justify-center items-center">
                             <button
                                 className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
                                 type="submit">Send Message</button>
+
+                            <LogoutButton />
                         </div>
 
                     </form>
