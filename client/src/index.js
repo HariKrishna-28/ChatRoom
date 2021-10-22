@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from "./App"
 import { Auth0Provider } from "@auth0/auth0-react"
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
+const domain = "dev-w7li5qg5.us.auth0.com"
+const clientId = "JMfvxTVpFYDflh7VUWw4D6NKyPd7GUK0"
 
 ReactDOM.render(
   <Auth0Provider
