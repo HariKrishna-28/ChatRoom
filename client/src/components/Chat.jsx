@@ -126,17 +126,18 @@ const Chat = ({ socket, name, room }) => {
                             required
                             autoFocus />
 
-                        <div className=" flex flex-col gap-2 justify-center items-center">
+                        <div className=" flex flex-row gap-2 justify-center items-center">
+                            <LogoutButton />
                             <button
                                 className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
                                 type="submit"
                                 style={ButtonWidth}
                             >Send Message</button>
 
-                            <LogoutButton />
                         </div>
 
                     </form>
+
                 </div >
 
 
