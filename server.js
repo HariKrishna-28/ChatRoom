@@ -10,7 +10,7 @@ app.use(cors())
 const server = http.createServer(app)
 
 // const baseUrl = "http://localhost:3000"
-const baseUrl = "https://chat-room28.netlify.app"
+const baseUrl = "https://chat-room-28.netlify.app"
 
 const io = new Server(server, {
     cors: {
