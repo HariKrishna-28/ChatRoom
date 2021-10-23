@@ -12,7 +12,7 @@ const LoginButton = () => {
                         src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="60px" alt="hand-wave" />
 
                 </div>
-                <h1 className="font-semibold text-3xl text-center mb-2 border-2 p-4 rounded">Welcome to ChatRoom!</h1>
+                <h1 className="font-semibold text-3xl text-center mb-2 p-4 rounded">Welcome to ChatRoom!</h1>
                 {/* <h2 className="font-semibold text-2xl text-center">Login to continue</h2> */}
                 <div className="flex align-center justify-center ">
 

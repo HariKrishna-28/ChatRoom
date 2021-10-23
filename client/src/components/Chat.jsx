@@ -15,6 +15,10 @@ const Chat = ({ socket, name, room }) => {
         div.scrollTop = div.scrollHeight - div.clientHeight;
     }
 
+    const ButtonWidth = {
+        width: "200px"
+    }
+
     const SendMessage = async () => {
         if (currMsg !== "") {
             const messageData = {
@@ -124,8 +128,10 @@ const Chat = ({ socket, name, room }) => {
 
                         <div className=" flex flex-col gap-2 justify-center items-center">
                             <button
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-                                type="submit">Send Message</button>
+                                className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+                                type="submit"
+                                style={ButtonWidth}
+                            >Send Message</button>
 
                             <LogoutButton />
                         </div>
