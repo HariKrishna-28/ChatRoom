@@ -16,7 +16,9 @@ function App() {
       <Profile />
       {
         !isAuthenticated &&
-        <ProfileLink className="mt-10" />
+        <div className="mt-10">
+          <ProfileLink />
+        </div>
       }
     </div>
   );

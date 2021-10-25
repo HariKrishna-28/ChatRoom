@@ -57,20 +57,29 @@ const ChatBody = () => {
                                 onChange={(e) => setRoom(e.target.value)}
                             />
 
-                            <div className="grid grid-row-2 gap-3 align-center justify-center">
+                            <div className="flex align-center justify-center">
                                 <button
                                     type="submit"
                                     className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded "
-                                    onClick={JoinRoom}>
+                                    onClick={JoinRoom}
+                                    style={{ "width": "200px" }}
+                                >
                                     Join/Create room
                                 </button>
-                                <LogoutButton />
-                                <div className="flex align-center justify-center mt-2">
+                                {/* <LogoutButton />
+                                <div className="flex align-center justify-center mt-5">
                                     <ProfileLink />
-                                </div>
+                                </div> */}
                             </div>
 
                         </form>
+                        <div className="grid grid-row-2 gap-3 align-center justify-center">
+                            <LogoutButton />
+                            <div className="flex align-center justify-center mt-5">
+                                <ProfileLink />
+                            </div>
+
+                        </div>
                     </div>
                 ) : (
 

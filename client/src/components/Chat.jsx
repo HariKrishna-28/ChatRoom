@@ -54,11 +54,9 @@ const Chat = ({ socket, name, room }) => {
 
     return (
 
-        <div className="flex flex-col items-center justify-center">
+        <div >
             {/* <div>hi</div> */}
             <div className="container">
-
-
                 <div className="grid grid-cols-1 bg-gray-800 text-white rounded p-2 gap-2 ">
 
                     <div >
@@ -132,8 +130,8 @@ const Chat = ({ socket, name, room }) => {
                                 type="submit"
                                 style={ButtonWidth}
                             >Send Message</button>
-                            <LogoutButton />
 
+                            <LogoutButton />
                         </div>
 
                     </form>
