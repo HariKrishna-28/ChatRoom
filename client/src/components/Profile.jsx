@@ -5,7 +5,7 @@ import ChatBody from './ChatBody';
 
 const Profile = () => {
     // eslint-disable-next-line
-    const { user, isAuthenticated } = useAuth0();
+    const { isAuthenticated } = useAuth0();
 
     return (
         isAuthenticated && (
