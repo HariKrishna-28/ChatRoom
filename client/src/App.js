@@ -10,7 +10,7 @@ import ProfileLink from "./components/ProfileLink";
 function App() {
   const { isAuthenticated } = useAuth0()
   return (
-    <div className="flex flex-col items-center justify-center h-screen  ">
+    <div className="flex flex-col items-center justify-center h-screen">
       <LoginButton />
       {/* <LogoutButton /> */}
       <Profile />
