@@ -15,8 +15,7 @@ const socket = io.connect(baseUrl)
 const ChatBody = () => {
     const [name, setName] = useState("")
     const [room, setRoom] = useState("")
-    // eslint-disable-next-line
-    const { user, isAuthenticated } = useAuth0();
+    const { user } = useAuth0();
     const [showChat, setShowChat] = useState(false)
 
     const JoinRoom = () => {
