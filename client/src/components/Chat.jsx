@@ -16,7 +16,9 @@ const Chat = ({ socket, name, room }) => {
     }
 
     const ButtonWidth = {
-        width: "200px"
+        width: "200px",
+        outline: "none",
+        border: "0"
     }
 
     const SendMessage = async () => {

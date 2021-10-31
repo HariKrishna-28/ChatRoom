@@ -61,7 +61,7 @@ const ChatBody = () => {
                                     type="submit"
                                     className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded "
                                     onClick={JoinRoom}
-                                    style={{ "width": "200px" }}
+                                    style={{ "width": "200px", outline: "none", border: "0" }}
                                 >
                                     Join/Create room
                                 </button>
