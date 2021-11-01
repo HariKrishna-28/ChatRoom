@@ -68,7 +68,7 @@ const Chat = ({ socket, name, room }) => {
                                     target=" _blank"
                                     rel="noreferrer"
                                     className="hover:text-blue-500" >
-                                    Chat Point
+                                    ChatRoom
                                 </a>
                             </h1>
 
