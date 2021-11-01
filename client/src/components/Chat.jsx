@@ -114,7 +114,9 @@ const Chat = ({ socket, name, room }) => {
 
                     <form onSubmit={(e) => {
                         e.preventDefault()
-                        SendMessage()
+                        if (currMsg) {
+                            SendMessage()
+                        }
                     }}>
 
                         <input
@@ -123,7 +125,6 @@ const Chat = ({ socket, name, room }) => {
                             className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             onChange={(e) => { setCurMsg(e.target.value) }}
                             value={currMsg}
-                            required
                             autoFocus />
 
                         <div className=" flex flex-row gap-2 justify-center items-center">
