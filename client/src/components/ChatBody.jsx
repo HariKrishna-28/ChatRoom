@@ -7,8 +7,8 @@ import LogoutButton from './LogoutButton';
 import ProfileLink from './ProfileLink';
 
 
-// const baseUrl = "https://chat-room-28.herokuapp.com"
-const baseUrl = "http://localhost:5000"
+const baseUrl = "https://chat-room-28.herokuapp.com"
+// const baseUrl = "http://localhost:5000"
 // rgb(255, 75, 75) rgb(14, 17, 23)
 
 const socket = io.connect(baseUrl)
