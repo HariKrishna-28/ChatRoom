@@ -59,10 +59,10 @@ const Chat = ({ socket, name, room }) => {
         <div >
             {/* <div>hi</div> */}
             <div className="container">
-                <div className="grid grid-cols-1 bg-gray-800 text-white rounded p-2 gap-2 ">
+                <div className="grid grid-cols-1 bg-gray-800 text-white rounded p-2 gap-2 " style={{ backgroundColor: "rgb(38, 39, 48)" }}>
 
                     <div >
-                        <div className="flex">
+                        <div className="flex" >
                             <h1 className="font-semibold text-3xl ">
                                 <a href="https://github.com/HariKrishna-28/ChatRoom"
                                     target=" _blank"
@@ -79,8 +79,8 @@ const Chat = ({ socket, name, room }) => {
 
                     </div>
                 </div>
-                <div className="flex-grow-1" id="outer-box">
-                    <div className="flex-grow-1 overflow-y-scroll overflow-x-hidden border-2 border-grey-500 rounded p-2"
+                <div className="flex-grow-1" id="outer-box" >
+                    <div className="flex-grow-1 overflow-y-scroll overflow-x-hidden border-2 border-gray-800 rounded p-2"
                         id="message-box"
                     >
 
@@ -121,10 +121,11 @@ const Chat = ({ socket, name, room }) => {
 
                         <input
                             type="text"
-                            // style={{ marginTop: "4px" }}
+                            style={{ color: "white", backgroundColor: "rgb(38, 39, 48)" }}
                             className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                             onChange={(e) => { setCurMsg(e.target.value) }}
                             value={currMsg}
+                            // style={{ backgroundColor: "rgb(38, 39, 48)" }}
                             autoFocus />
 
                         <div className=" flex flex-row gap-2 justify-center items-center">

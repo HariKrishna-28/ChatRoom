@@ -7,8 +7,9 @@ import LogoutButton from './LogoutButton';
 import ProfileLink from './ProfileLink';
 
 
-const baseUrl = "https://chat-room-28.herokuapp.com"
-// const baseUrl = "http://localhost:5000"
+// const baseUrl = "https://chat-room-28.herokuapp.com"
+const baseUrl = "http://localhost:5000"
+// rgb(255, 75, 75) rgb(14, 17, 23)
 
 const socket = io.connect(baseUrl)
 
@@ -45,6 +46,7 @@ const ChatBody = () => {
                                 className="shadow appearance-none border border-blue-500 rounded w-full py-2 mx-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                 required
                                 autoFocus
+                                style={{ backgroundColor: "rgb(38, 39, 48)" }}
                                 onChange={(e) => setName(e.target.value)}
                             />
 
@@ -53,6 +55,7 @@ const ChatBody = () => {
                                 className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 mx-2 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Room ID"
                                 required
+                                style={{ backgroundColor: "rgb(38, 39, 48)" }}
                                 onChange={(e) => setRoom(e.target.value)}
                             />
 
