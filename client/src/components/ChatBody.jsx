@@ -14,11 +14,11 @@ const baseUrl = "https://chat-room-28.herokuapp.com"
 const socket = io.connect(baseUrl)
 
 const ChatBody = () => {
+    const { user } = useAuth0();
     const [name, setName] = useState("")
     const [room, setRoom] = useState("")
-    const { user } = useAuth0();
     const [showChat, setShowChat] = useState(false)
-
+    console.log(user);
     const JoinRoom = () => {
         if (name !== "" && room !== "") {
             socket.emit("join_room", room)

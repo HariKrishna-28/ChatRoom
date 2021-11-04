@@ -123,13 +123,14 @@ const Chat = ({ socket, name, room }) => {
                             <input
                                 type="text"
                                 style={{ color: "white", backgroundColor: "rgb(38, 39, 48)" }}
-                                className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                                className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 leading-tight focus:outline-none " //
                                 onChange={(e) => { setCurMsg(e.target.value) }}
                                 value={currMsg}
                                 // style={{ backgroundColor: "rgb(38, 39, 48)" }}
                                 autoFocus />
 
-                            <button className="bg-purple-500 hover:bg-purple-700 p-3 text-white font-semibold rounded"
+                            <button className="bg-purple-500 hover:bg-purple-700 p-3 text-white font-semibold rounded "
+                                style={{ border: "0px", outline: "none" }}
                                 type="submit">
                                 <img src={SendButton} alt="send" />
                             </button>
@@ -138,9 +139,9 @@ const Chat = ({ socket, name, room }) => {
                         <div className=" flex flex-row mt-2 justify-center items-center">
                             {/* <button
                                 className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
-                                type="submit"
+                                onClick={() => window.location.reload(true)}
                                 style={ButtonWidth}
-                            >Send Message</button> */}
+                            >Switch Room</button> */}
 
                             <LogoutButton />
                         </div>

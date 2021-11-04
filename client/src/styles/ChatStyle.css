@@ -21,9 +21,9 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   #outer-box {
-    width: 600px;
+    width: 650px;
   }
   #message-box {
-    height: 450px;
+    height: 420px;
   }
 }
