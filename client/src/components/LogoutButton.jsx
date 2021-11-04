@@ -8,7 +8,7 @@ const LogoutButton = () => {
         isAuthenticated && (
             <button
                 style={{ width: "200px", outline: "none", border: "0" }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                 onClick={() => logout()}>
                 Log Out
             </button>

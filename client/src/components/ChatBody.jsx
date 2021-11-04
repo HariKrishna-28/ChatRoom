@@ -44,6 +44,7 @@ const ChatBody = () => {
                                 type="text"
                                 placeholder="UserName"
                                 className="shadow appearance-none border border-blue-500 rounded w-full py-2 mx-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                                // value={user.nickname}
                                 required
                                 autoFocus
                                 style={{ backgroundColor: "rgb(38, 39, 48)" }}
@@ -62,7 +63,7 @@ const ChatBody = () => {
                             <div className="flex align-center justify-center">
                                 <button
                                     type="submit"
-                                    className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded "
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded "
                                     onClick={JoinRoom}
                                     style={{ "width": "200px", outline: "none", border: "0" }}
                                 >

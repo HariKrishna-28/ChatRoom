@@ -4,7 +4,7 @@
     width: 350px;
   }
   #message-box {
-    height: 280px;
+    height: 310px;
   }
 }
 
@@ -21,9 +21,9 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   #outer-box {
-    width: 550px;
+    width: 600px;
   }
   #message-box {
-    height: 380px;
+    height: 450px;
   }
 }
