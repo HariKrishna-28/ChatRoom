@@ -63,7 +63,7 @@ const ChatBody = () => {
                             <div className="flex align-center justify-center">
                                 <button
                                     type="submit"
-                                    className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded "
+                                    className="bg-blue-700 hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded "
                                     onClick={JoinRoom}
                                     style={{ "width": "200px", outline: "none", border: "0" }}
                                 >

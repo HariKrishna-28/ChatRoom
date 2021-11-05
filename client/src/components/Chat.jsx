@@ -129,7 +129,7 @@ const Chat = ({ socket, name, room }) => {
                                 // style={{ backgroundColor: "rgb(38, 39, 48)" }}
                                 autoFocus />
 
-                            <button className="bg-purple-500 hover:bg-purple-700 p-3 text-white font-semibold rounded "
+                            <button className="bg-purple-700 hover:bg-purple-500 p-3 text-white font-semibold rounded "
                                 style={{ border: "0px", outline: "none" }}
                                 type="submit">
                                 <img src={SendButton} alt="send" />
