@@ -18,7 +18,7 @@ const ChatBody = () => {
     const [name, setName] = useState("")
     const [room, setRoom] = useState("")
     const [showChat, setShowChat] = useState(false)
-    console.log(user);
+    // console.log(user);
     const JoinRoom = () => {
         if (name !== "" && room !== "") {
             socket.emit("join_room", room)
