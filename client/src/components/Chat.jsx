@@ -8,7 +8,7 @@ import SendButton from '../assets/send.svg'
 const Chat = ({ socket, name, room }) => {
     const [currMsg, setCurMsg] = useState("")
     const [messageList, setMessageList] = useState([])
-    const incoming = new Audio(IncomingMessageAudio);
+    const incoming = new Audio(IncomingMessageAudio)
     const outgoing = new Audio(OutGoingMessageAudio)
 
     function MessageScroll() { //scrolls to the bottom of the div tag

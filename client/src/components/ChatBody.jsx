@@ -4,7 +4,7 @@ import io from "socket.io-client"
 import Chat from "./Chat";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from './LogoutButton';
-import ProfileLink from './ProfileLink';
+// import ProfileLink from './ProfileLink';
 
 
 const baseUrl = "https://chat-room-28.herokuapp.com"
@@ -78,9 +78,9 @@ const ChatBody = () => {
                         </form>
                         <div className="grid grid-row-2 gap-3 align-center justify-center">
                             <LogoutButton />
-                            <div className="flex align-center justify-center mt-5">
+                            {/* <div className="flex align-center justify-center mt-5">
                                 <ProfileLink />
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>
