@@ -34,8 +34,13 @@ const ChatBody = () => {
                         {/* <h1>Hi frans</h1> */}
                         {/* <h3 className="font-bold text-3xl text-center">Welcome!</h3> */}
                         {/* <h3 className="font-bold text-3xl text-center">Join a Chat</h3> */}
-                        <div className="flex align-center justify-center">
-                            <img src={user.picture} alt={user.name} width="100px" style={{ borderRadius: "50%" }} />
+                        <div className="flex align-center justify-center ">
+                            <img
+                                src={user.picture}
+                                alt={user.name}
+                                width="100px"
+                                style={{ borderRadius: "50%", }}
+                            />
                         </div>
                         <p className="font-semibold text-3xl text-center">Hi, {user.name}</p>
                         <form className="mx-10 lg:mx-0">
@@ -54,7 +59,7 @@ const ChatBody = () => {
                             <input
                                 type="text"
                                 className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 mx-2 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                                placeholder="Room ID"
+                                placeholder="RoomID"
                                 required
                                 style={{ backgroundColor: "rgb(38, 39, 48)" }}
                                 onChange={(e) => setRoom(e.target.value)}

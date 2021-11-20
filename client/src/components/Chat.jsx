@@ -122,10 +122,11 @@ const Chat = ({ socket, name, room }) => {
                         <div className="flex gap-1 mt-1">
                             <input
                                 type="text"
-                                style={{ color: "white", backgroundColor: "rgb(38, 39, 48)" }}
+                                style={{ color: "white", backgroundColor: "rgb(38, 39, 48)", }}
                                 className="shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 leading-tight focus:outline-none " //
                                 onChange={(e) => { setCurMsg(e.target.value) }}
                                 value={currMsg}
+                                placeholder="Type a message"
                                 // style={{ backgroundColor: "rgb(38, 39, 48)" }}
                                 autoFocus />
 
