@@ -4,8 +4,11 @@ import '../styles/ChatStyle.css'
 import OutGoingMessageAudio from "../assets/when-604.mp3"
 import LogoutButton from './LogoutButton'
 import SendButton from '../assets/send.svg'
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Chat = ({ socket, name, room }) => {
+
+    const { user } = useAuth0();
     const [currMsg, setCurMsg] = useState("")
     const [messageList, setMessageList] = useState([])
     const incoming = new Audio(IncomingMessageAudio)
@@ -63,19 +66,35 @@ const Chat = ({ socket, name, room }) => {
                 <div className="grid grid-cols-1 bg-gray-800 text-white rounded p-2 gap-2 " style={{ backgroundColor: "rgb(38, 39, 48)" }}>
 
                     <div >
-                        <div className="flex" >
-                            <h1 className="font-semibold text-3xl ">
+                        <div className="flex justify-between" >
+                            <h1 className="flex flex-col font-semibold text-3xl ">
+
                                 <a href="https://github.com/HariKrishna-28/ChatRoom"
                                     target=" _blank"
                                     rel="noreferrer"
                                     className="hover:text-blue-500" >
                                     ChatRoom
                                 </a>
+
+                                <span className="flex gap-3">
+                                    <p className="text-sm font-semibold text-blue-500">Name : <span className="text-gray-300">{name}</span></p>
+                                    <p className="text-sm font-semibold text-blue-500">Room ID : <span className="text-gray-300">{room}</span></p>
+                                </span>
+
                             </h1>
+
+                            <span className="flex align-center justify-center items-center mr-2 ">
+                                {/* {name} */}
+                                <img
+                                    src={user.picture}
+                                    alt={user.name}
+                                    style={{ width: "auto", height: "50px", borderRadius: "50%" }}
+                                // height="10px"
+                                />
+                            </span>
 
                         </div>
 
-                        <p className="text-sm font-semibold">Room ID: <span className="text-gray-300">{room}</span></p>
 
 
                     </div>
